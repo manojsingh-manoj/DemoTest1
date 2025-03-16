@@ -17,9 +17,13 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: 'latest'
+    repository: $(DOCKER_REPOSITORY_NAME)
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'aws_connect'
     regionName: 'eu-central-1'
     imageSource: 'imagename'
-    repositoryName: 'test/demo'
+    sourceImageName: $(DOCKER_REPOSITORY_NAME)
+    sourceImageTag: $(Build.BuildId)
+    pushTag: latest
+    repositoryName: $(DOCKER_REPOSITORY_NAME)
