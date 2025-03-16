@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ip-172-31-54-170
+  vmImage: 'ip-172-31-54-170'
 
 steps:
 - task: Maven@3
