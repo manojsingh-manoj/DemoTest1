@@ -18,6 +18,8 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: $(Build.BuildId)
     repository: $(DOCKER_REPOSITORY_NAME)
+    autoCreateRepository: true
+    
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'aws_connect'
