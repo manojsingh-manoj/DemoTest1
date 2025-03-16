@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'selfhosted-awsec2'
+  name: 'selfhosted-awsec2'
 
 steps:
 - task: Maven@3
