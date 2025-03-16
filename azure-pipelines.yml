@@ -12,3 +12,8 @@ pool:
 steps:
 
 - template: build.yaml
+- task: Docker@2
+  inputs:
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
