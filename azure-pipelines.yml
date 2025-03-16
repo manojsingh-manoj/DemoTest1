@@ -16,7 +16,7 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: '**/Dockerfile'
-    tags: 'latest'
+    tags: $(Build.BuildId)
     repository: $(DOCKER_REPOSITORY_NAME)
 - task: ECRPushImage@1
   inputs:
