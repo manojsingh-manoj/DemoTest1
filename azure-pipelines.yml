@@ -17,3 +17,9 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: 'latest'
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'aws_connect'
+    regionName: 'eu-central-1'
+    imageSource: 'imagename'
+    repositoryName: 'test/demo'
